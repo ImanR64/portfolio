@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Iman Rostami — Nanoscience, imaging and structural biology consulting</title>
+<meta name="description" content="Independent scientific consultant in Switzerland: nanoparticle functionalization, multi-scale imaging (cryo-EM, X-ray, AFM, light), structural biology, analytical chemistry and Python/R data pipelines. Chinese–European technical liaison.">
+<meta property="og:title" content="Dr. Iman Rostami — scientific consulting">
+<meta property="og:description" content="Nanoparticle functionalization, multi-scale imaging, structural biology and data pipelines. Switzerland, with China–Europe technical liaison.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#082432;
+    --accent:#6491EA;
+    --accent-pale:#E4ECFB;
+    --paper:#F5F7FA;
+    --ink:#1B2230;
+    --muted:#5C6B7F;
+    --rule:#D6DDE7;
+    --serif:"Fraunces",Georgia,serif;
+    --sans:"IBM Plex Sans",system-ui,sans-serif;
+    --w:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6}
+  a{color:var(--accent);text-decoration:none}
+  a:hover,a:focus-visible{text-decoration:underline}
+  :focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+  .wrap{max-width:var(--w);margin:0 auto;padding:0 28px}
+  h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.15;letter-spacing:-.01em}
+  h2{font-size:2rem;margin-bottom:1.5rem}
+  h3{font-size:1.35rem;margin-bottom:.4rem}
+  p.lede{font-size:1.2rem;color:var(--muted);max-width:60ch}
+
+  /* Header */
+  header{background:var(--navy);color:#fff}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .brand{font-family:var(--serif);font-size:1.25rem;color:#fff}
+  nav a{color:#C9D5EA;margin-left:22px;font-size:.95rem}
+  nav a:hover{color:#fff}
+  @media (max-width:640px){nav a{margin-left:14px;font-size:.85rem}}
+
+  /* Hero */
+  .hero{background:var(--navy);color:#fff;padding:72px 0 0}
+  .hero h1{font-size:clamp(2.2rem,5.2vw,3.6rem);max-width:20ch;margin-bottom:1.2rem}
+  .hero p{max-width:58ch;color:#C9D5EA;font-size:1.15rem;margin-bottom:2rem}
+  .btn{display:inline-block;background:var(--accent);color:var(--navy);font-weight:600;padding:13px 24px;border-radius:6px}
+  .btn:hover{background:#7FA4F0;text-decoration:none}
+  .btn.ghost{background:transparent;color:#fff;border:1px solid #3B5A73;margin-left:10px}
+  .btn.ghost:hover{border-color:#fff}
+
+  /* Scale ribbon */
+  .scale{margin-top:64px;padding:28px 0 36px;border-top:1px solid #1F4056}
+  .scale-caption{color:#C9D5EA;font-size:.95rem;margin-bottom:22px}
+  .ruler{position:relative;height:2px;background:linear-gradient(90deg,var(--accent),#C9D5EA)}
+  .ticks{display:grid;grid-template-columns:repeat(4,1fr);margin-top:-1px}
+  .tick{position:relative;padding-top:18px;border-left:2px solid var(--accent-pale)}
+  .tick::before{content:"";position:absolute;left:-2px;top:-8px;width:2px;height:16px;background:#fff}
+  .tick b{display:block;font-family:var(--serif);font-size:1.6rem;font-weight:500;color:#fff;padding-left:10px}
+  .tick span{display:block;font-size:.85rem;color:#C9D5EA;padding-left:10px;line-height:1.4}
+  .tick em{font-style:normal;color:var(--accent)}
+  @media (max-width:640px){.ticks{grid-template-columns:repeat(2,1fr);row-gap:24px}}
+
+  /* Sections */
+  section{padding:80px 0}
+  section+section{border-top:1px solid var(--rule)}
+
+  /* Services as rows */
+  .service{display:grid;grid-template-columns:1fr 2fr;gap:32px;padding:32px 0;border-top:1px solid var(--rule)}
+  .service:last-child{border-bottom:1px solid var(--rule)}
+  .service p{color:var(--muted);margin-bottom:.8rem;max-width:62ch}
+  .service ul{list-style:none}
+  .service li{padding-left:18px;position:relative;font-size:.97rem}
+  .service li::before{content:"▸";position:absolute;left:0;color:var(--accent)}
+  .service .fit{font-size:.9rem;color:var(--ink);background:var(--accent-pale);display:inline-block;padding:4px 10px;border-radius:4px;margin-top:10px}
+  @media (max-width:760px){.service{grid-template-columns:1fr;gap:12px}}
+
+  /* Process */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;counter-reset:step}
+  .step{counter-increment:step;border-top:3px solid var(--accent);padding-top:14px}
+  .step::before{content:counter(step);font-family:var(--serif);font-size:1.5rem;color:var(--accent);display:block;margin-bottom:6px}
+  .step h3{font-size:1.1rem}
+  .step p{color:var(--muted);font-size:.95rem}
+  @media (max-width:760px){.steps{grid-template-columns:1fr 1fr}}
+  @media (max-width:480px){.steps{grid-template-columns:1fr}}
+
+  /* Background */
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+  @media (max-width:760px){.two{grid-template-columns:1fr}}
+  .timeline{list-style:none;border-left:2px solid var(--rule);margin-top:8px}
+  .timeline li{padding:0 0 18px 20px;position:relative}
+  .timeline li::before{content:"";position:absolute;left:-7px;top:9px;width:12px;height:12px;border-radius:50%;background:var(--paper);border:2px solid var(--accent)}
+  .timeline b{display:block;font-weight:600}
+  .timeline span{color:var(--muted);font-size:.95rem}
+  .tools{display:grid;grid-template-columns:1fr 1fr;gap:6px 24px;list-style:none;font-size:.97rem}
+  .tools li{padding:6px 0;border-bottom:1px solid var(--rule)}
+  .tools li b{font-weight:600;display:block;color:var(--muted);font-size:.8rem;margin-bottom:2px}
+
+  .pubs{list-style:none}
+  .pubs li{padding:18px 0;border-top:1px solid var(--rule)}
+  .pubs li:last-child{border-bottom:1px solid var(--rule)}
+  .pubs a{font-family:var(--serif);font-size:1.15rem;color:var(--ink);display:block;margin-bottom:4px}
+  .pubs a:hover{color:var(--accent)}
+  .pubs span{color:var(--muted);font-size:.95rem}
+
+  /* Contact */
+  .contact{background:var(--navy);color:#fff}
+  .contact h2{color:#fff}
+  .contact p{color:#C9D5EA;max-width:56ch;margin-bottom:1.6rem}
+  .contact .links a{color:#fff;margin-right:22px}
+
+  footer{background:var(--navy);border-top:3px solid var(--accent);color:#C9D5EA;font-size:.9rem;padding:22px 0}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <span class="brand">Dr. Iman Rostami</span>
+    <nav aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#process">How it works</a>
+      <a href="#about">About</a>
+      <a href="#publications">Publications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <h1>Scientific consulting from the ångström to the tissue.</h1>
+    <p>I help biotech and nanomedicine teams design, image and analyse what they are building: nanoparticle functionalization for organelle targeting, multi-scale microscopy, structural biology, analytical chemistry, and the Python/R pipelines that turn the data into decisions. Based in Switzerland, with working ties to Chinese research and CRO partners.</p>
+    <a class="btn" href="#contact">Book a first call</a>
+    <a class="btn ghost" href="#publications">See publications</a>
+
+    <div class="scale" aria-label="Length scales covered">
+      <div class="scale-caption">One person, every length scale of the problem</div>
+      <div class="ruler"></div>
+      <div class="ticks">
+        <div class="tick"><b>1 Å</b><span><em>Cryo-EM, structural modelling</em><br>ribosomes, protein complexes, AlphaFold and PDB work</span></div>
+        <div class="tick"><b>1 nm</b><span><em>Nanoparticles, proteins, AFM</em><br>surface chemistry, bioconjugation, protein purification</span></div>
+        <div class="tick"><b>1 µm</b><span><em>X-ray and light microscopy</em><br>organelles, iPSC-derived neurons, cell models</span></div>
+        <div class="tick"><b>1 mm</b><span><em>Tissue and formulation</em><br>chromatography, spectroscopy, QC under GMP</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <h2>What I can do for you</h2>
+    <p class="lede" style="margin-bottom:2rem">Four services, each scoped to a fixed deliverable so you know what you get before we start.</p>
+
+    <div class="service">
+      <div><h3>Nanoparticle design and organelle targeting</h3></div>
+      <div>
+        <p>Surface functionalization strategy, peptide and ligand conjugation, and a characterization plan that will convince a reviewer or an investor. Ten years of hands-on nanocarrier work, from synthesis to cell and tissue uptake studies.</p>
+        <ul>
+          <li>Formulation and conjugation chemistry review</li>
+          <li>Targeting strategy for mitochondria, nucleus, ER and other compartments</li>
+          <li>Analytical QC plan: chromatography, spectroscopy, size and zeta</li>
+        </ul>
+        <span class="fit">Good fit: nanomedicine startups, drug-delivery groups, CROs</span>
+      </div>
+    </div>
+
+    <div class="service">
+      <div><h3>Imaging strategy and data interpretation</h3></div>
+      <div>
+        <p>Which technique answers your question, how to prepare the sample, and what the images actually show. Cryo-EM and cryo-ET, X-ray microscopy at synchrotron beamlines, AFM and light microscopy, plus structural-biology modelling of the result.</p>
+        <ul>
+          <li>Technique selection and experiment design</li>
+          <li>Beamtime and cryo-EM session preparation</li>
+          <li>Structure-function analysis with PyMOL and ChimeraX</li>
+          <li>Protein expression and purification for structural work</li>
+        </ul>
+        <span class="fit">Good fit: labs without in-house EM or synchrotron experience</span>
+      </div>
+    </div>
+
+    <div class="service">
+      <div><h3>Analysis pipelines and AI-assisted reporting</h3></div>
+      <div>
+        <p>Reproducible image-analysis and statistics workflows in Python, R and Fiji, and AI-accelerated literature reviews, feasibility studies and technical reports that a scientist has checked line by line.</p>
+        <ul>
+          <li>Image segmentation and quantification scripts you own</li>
+          <li>Cell-model design: iPSC lines, CRISPR knock-outs and knock-ins</li>
+          <li>Biostatistics: GLMs, mixed models, reporting figures</li>
+          <li>Literature and prior-art reviews, delivered in days</li>
+        </ul>
+        <span class="fit">Good fit: teams drowning in microscopy data or papers</span>
+      </div>
+    </div>
+
+    <div class="service">
+      <div><h3>China–Europe technical liaison</h3></div>
+      <div>
+        <p>I did my PhD in Beijing and have worked nine years in Swiss research. I read the science on both sides, and I can audit a CRO data package, sit in on technical calls, or translate a protocol without losing the chemistry.</p>
+        <ul>
+          <li>Technical due diligence on Chinese CRO or supplier data</li>
+          <li>Protocol and report translation, English and Chinese</li>
+          <li>Partner search and first-contact support</li>
+        </ul>
+        <span class="fit">Good fit: Swiss and EU biotechs sourcing or partnering in China</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <h2>How working together goes</h2>
+    <div class="steps">
+      <div class="step"><h3>Thirty-minute call</h3><p>You describe the problem. I say whether I can help and what it would cost. No charge.</p></div>
+      <div class="step"><h3>Fixed-scope offer</h3><p>A one-page proposal with deliverable, timeline and price. Nothing starts until you approve it.</p></div>
+      <div class="step"><h3>Work and check-ins</h3><p>Short written updates. Questions answered within one working day.</p></div>
+      <div class="step"><h3>Handover</h3><p>Report, scripts or slides, plus a walkthrough so your team can carry on without me.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap two">
+    <div>
+      <h2>Background</h2>
+      <p style="color:var(--muted);margin-bottom:1rem">PhD in nanobiotechnology and medicinal chemistry, then nine years across Swiss research institutes. Before academia, pharmaceutical quality control under ISO 17025 and GMP.</p>
+      <ul class="timeline">
+        <li><b>University of Basel, Department of Biomedicine</b><span>Ribosome biology and iPSC-derived motor-neuron models of neurodegeneration</span></li>
+        <li><b>University of Bern</b><span>Cryo-EM and structural cell biology</span></li>
+        <li><b>EPFL</b><span>Imaging and nanomaterials</span></li>
+        <li><b>Paul Scherrer Institute, cSAXS</b><span>Synchrotron X-ray microscopy; also ALBA / MISTRAL, Barcelona</span></li>
+        <li><b>University of the Chinese Academy of Sciences, Beijing</b><span>PhD: peptide-functionalized nanocarriers for cancer therapy and bioimaging</span></li>
+        <li><b>MABA Co., pharmaceutical QC</b><span>Analytical chemistry under ISO 17025 and GMP</span></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Tools and languages</h2>
+      <ul class="tools">
+        <li><b>Imaging</b>Cryo-EM, cryo-ET, X-ray microscopy, AFM, confocal and widefield</li>
+        <li><b>Structural</b>cryoSPARC, RELION, AlphaFold, PyMOL, ChimeraX</li>
+        <li><b>Analytical</b>HPLC and chromatography, UV-Vis, IR, fluorescence spectroscopy</li>
+        <li><b>Nano</b>Synthesis, surface modification, bioconjugation, targeting</li>
+        <li><b>Cell and molecular</b>iPSC culture, CRISPR-Cas9 gene editing, cloning and expression, cell-line models</li>
+        <li><b>Protein biochemistry</b>Recombinant expression, purification (affinity, IEX, SEC), biophysical characterization</li>
+        <li><b>Computation</b>Python, R, Fiji/ImageJ macros, GLMs and biostatistics</li>
+        <li><b>Languages</b>English, Chinese, Persian; living and working in Switzerland</li>
+        <li><b>Compliance</b>ISO 17025, GMP quality control</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="wrap">
+    <h2>Selected publications</h2>
+    <p class="lede" style="margin-bottom:1.5rem">A few papers that show the range. The full list is on <a href="https://scholar.google.com/citations?hl=en&user=A0uTlesAAAAJ" target="_blank" rel="noopener">Google Scholar</a>.</p>
+    <ul class="pubs">
+      <li><a href="https://doi.org/10.2147/IJN.S221433" target="_blank" rel="noopener">Breakthroughs in medicine and bioimaging with up-conversion nanoparticles</a><span>Rostami, Rezvani Alanagh, Hu, Shahmoradian. International Journal of Nanomedicine, 2019. First author.</span></li>
+      <li><a href="https://doi.org/10.3389/fmolb.2021.686086" target="_blank" rel="noopener">Investigating crosstalk among PTMs provides novel insight into the structural basis underlying the differential effects of Nt17 PTMs on mutant Httex1 aggregation</a><span>Chiki, Zhang, Rajasekhar, Abriata, Rostami, et al. Frontiers in Molecular Biosciences, 2021. Huntingtin aggregation, EPFL and PSI.</span></li>
+      <li><a href="https://doi.org/10.1021/acsami.8b00583" target="_blank" rel="noopener">pH-triggered peptide self-assembly for targeting imaging and therapy toward angiogenesis with enhanced signals</a><span>Qian, Wang, Wang, Jia, Han, Rostami, Wang, Hu. ACS Applied Materials &amp; Interfaces, 2018. Peptide nanomaterials, NCNST Beijing.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>Tell me what you are working on</h2>
+    <p>Send a few lines about the problem and the timeline. I reply within two working days with an honest answer on whether I am the right person.</p>
+    <a class="btn" href="mailto:imanrostami64@gmail.com">Email me</a>
+    <p class="links" style="margin-top:2rem">
+      <a href="https://www.linkedin.com/in/iman-rostami-57822b81/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://orcid.org/0000-0002-1344-0748" target="_blank" rel="noopener">ORCID</a>
+      <a href="https://scholar.google.com/citations?hl=en&user=A0uTlesAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+      <a href="https://github.com/ImanR64" target="_blank" rel="noopener">GitHub</a>
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Dr. Iman Rostami, scientific and technical consulting, Switzerland</span>
+    <span>ORCID 0000-0002-1344-0748</span>
+  </div>
+</footer>
+
+</body>
+</html>
